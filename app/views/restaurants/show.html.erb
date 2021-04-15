@@ -1,8 +1,15 @@
-<h1>✦ RESTAURANT ✦</h1>
-
-<h3><%= @restaurant.name %> <%= '✦' * @restaurant.rating %></h3>
+<h4>✦ RESTAURANT ✦</h4>
+<br>
+<h4><%= @restaurant.name %></h4>
+<h5><%= @restaurant.category %></h5>
+<p><%= @restaurant.phone_number %></p>
 <p><%= @restaurant.address %></p>
 
-<%= link_to "back", restaurant_path %>
-<%= link_to "see all", restaurants_path %>
-<%= link_to "leave a review", new_restaurant_review_path(@restaurant) %>
+<p>Reviews:<% @restaurant.reviews.each do |review| %></p>
+<p><%= review.content %></p>
+  <% end %>
+<br>
+<br>
+<%= link_to "see all", restaurants_path, class: 'btn btn-success' %>
+<%= link_to "leave review", new_restaurant_review_path(@restaurant), class: 'btn btn-success' %>
+<%= link_to "delete", restaurant_path(@restaurant), method: :delete, data: { confirm: 'Please confirm'}, class: 'btn btn-success' %>

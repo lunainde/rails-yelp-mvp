@@ -1,8 +1,14 @@
-<%= simple_form_for(@restaurant) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :phone_number %>
-  <%= f.input :category %>
-  <%= f.input :rating %>
-  <%= f.submit %>
-<% end %>
+<div class="container mt-5">
+  <h4>✦ Add a Restaurant ✦</h4>
+  <br>
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category %>
+    <%= f.button :submit, class: 'btn btn-success' %>
+  <% end %>
+</div>
+
+

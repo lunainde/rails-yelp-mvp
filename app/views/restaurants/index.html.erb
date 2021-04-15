@@ -1,6 +1,12 @@
 <h3>✦ RESTAURANTS ✦</h3>
-
-<% @restaurants.each do | restaurant | %>
-<h3><%= link_to restaurant.name, restaurant_path(restaurant) %> <%= '✦' * restaurant.rating %></h3>
-<p><%= restaurant.address %></p>
-<% end %>
+<br>
+<%= link_to 'create new', new_restaurant_path, class: 'btn btn-success'%>
+<br>
+<div class="container mt-5">
+  <% @restaurants.each do | restaurant | %>
+    <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
+    <h5><%= restaurant.category %></h5>
+    <p><%= restaurant.phone_number %></p>
+    <p><%= restaurant.address %></p>
+  <% end %>
+</div>
